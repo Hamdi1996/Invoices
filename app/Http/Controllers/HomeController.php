@@ -31,14 +31,14 @@ class HomeController extends Controller
         $Paid           = invoices::where('Value_Status',1)->count();
         $unPaid         = invoices::where('Value_Status',2)->count();
         $Partial        = invoices::where('Value_Status',3)->count();
-        if($Invoices_Count==0){
+        if($Invoices_Count==0)
             $Invoices_Count = 1;
-        }
-        else{
+        
+       
         $PaidPercent    = round(($Paid/$Invoices_Count)*100);
         $UnpaidPercent  = round(($unPaid/$Invoices_Count)*100);
         $PartialPercent = round(($Partial/$Invoices_Count)*100);
-        }
+        
 
 
 
