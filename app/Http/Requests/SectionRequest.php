@@ -24,7 +24,7 @@ class SectionRequest extends FormRequest
     public function rules()
     {
         return [
-            'section_name'=>'required|max:15|unique:sections,section_name,'.$this->id,
+            'section_name'=>'required|max:15|unique:sections,section_name'.$this->id,
             'description'=>'required',
         ];
     }
