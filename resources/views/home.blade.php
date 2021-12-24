@@ -93,9 +93,11 @@
 											<i class="fas fa-arrow-circle-down text-white"></i>
 											<span class="text-white op-7">
 												@if (\App\Models\invoices::count()==0)
-													{{\App\Models\invoices::count()==1}}
-												@endif
+												{{round((\App\Models\invoices::where('Value_Status',2)->count() / 1)*100)}}  %</span>
+												
+												@else
 												{{round((\App\Models\invoices::where('Value_Status',2)->count() / \App\Models\invoices::count())*100)}}  %</span>
+												@endif
 										</span>
 									</div>
 								</div>
@@ -124,9 +126,12 @@
 											<i class="fas fa-arrow-circle-up text-white"></i>
 											<span class="text-white op-7"> 
 												@if (\App\Models\invoices::count()==0)
-												{{\App\Models\invoices::count()==1}}
-											@endif
+												{{round((\App\Models\invoices::where('Value_Status',1)->count() / 1)*100)}}  %</span>
+												
+												@else
+										
 												{{round((\App\Models\invoices::where('Value_Status',1)->count() / \App\Models\invoices::count())*100)}}  %</span>
+												@endif
 										</span>
 									</div>
 								</div>
@@ -154,9 +159,11 @@
 										<span class="float-right my-auto mr-auto">
 											<i class="fas fa-arrow-circle-down text-white"></i>
 											@if (\App\Models\invoices::count()==0)
-											{{\App\Models\invoices::count()==1}}
-										@endif
+											<span class="text-white op-7"> {{round((\App\Models\invoices::where('Value_Status',3)->count() / 1)*100)}}  %</span></span>
+											@else
+									
 											<span class="text-white op-7"> {{round((\App\Models\invoices::where('Value_Status',3)->count() / \App\Models\invoices::count())*100)}}  %</span></span>
+											@endif
 										</span>
 									</div>
 								</div>
