@@ -61,7 +61,7 @@ class InvoicesDetailsController extends Controller
     public function edit($id)
     {
         $invoices    = invoices::where('id',$id)->first();
-        $details     = InvoicesDetails::where('id_invoice',$id)->get();
+        $details     = InvoicesDetails::where('id_Invoice',$id)->get();
         $attachments = InvoicesAttachment::where('invoice_id',$id)->get(); 
 
         
